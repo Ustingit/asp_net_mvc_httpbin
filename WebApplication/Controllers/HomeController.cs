@@ -3,28 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication.Models;
 
 namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
+        DBContentContext db = new DBContentContext();
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult DBResults()
         {
-            ViewBag.Message = "Your application description page.";
-
+            IEnumerable<DBContent> contents = db.DBContents;
+            ViewBag.Content = contents;
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public string Start()
         {
-            ViewBag.Message = "Your contact page!!!!!!!!!!.";
-
-            return View();
+            return "Спасибо за покупку!";
         }
     }
 }

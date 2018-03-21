@@ -80,3 +80,5 @@ D:\SHARP\ASP\WebApplication\WebApplication\bin\Microsoft.Owin.Security.Microsoft
 D:\SHARP\ASP\WebApplication\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
 D:\SHARP\ASP\WebApplication\WebApplication\obj\Debug\WebApplication.dll
 D:\SHARP\ASP\WebApplication\WebApplication\obj\Debug\WebApplication.pdb
+D:\SHARP\ASP\WebApplication\WebApplication\bin\NLog.dll
+D:\SHARP\ASP\WebApplication\WebApplication\bin\NLog.xml
