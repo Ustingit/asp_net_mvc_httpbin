@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Конфигурирование</title>
+</head>
+<body>
+    <div class="configuration">
+        <p>В данный момент длительность работы приложения составляет: @ViewBag.Duration секунд.</p>
+        <form method="post" action="/Configurations/SetDuration">
+
+            <p>Введите желаемую длительность работы приложения:</p>
+            @Html.TextBox("duration")
+            <input type="submit" />
+        </form>
+
+    </div>
+</body>
+</html>

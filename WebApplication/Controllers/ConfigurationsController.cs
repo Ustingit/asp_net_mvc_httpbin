@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,10 +7,12 @@ using WebApplication.Models;
 
 namespace WebApplication.Controllers
 {
-    public class HomeController : Controller
+    public class ConfigurationsController : Controller
     {
         ConfigurationsModel configurationsModel = ConfigurationsModel.Instance;
 
+        // GET: Configurations
+        [HttpGet]
         public ActionResult Index()
         {
             ViewBag.Duration = configurationsModel.ResponseDuration;
@@ -19,11 +20,10 @@ namespace WebApplication.Controllers
         }
 
         [HttpPost]
-        public ContentResult Start()
+        public string SetDuration(int duration)
         {
-            HomeModel homeModel = new HomeModel();
-            var w = homeModel.StartAppWorking();
-            return Content($"Hello {w} !!!!");
+            configurationsModel.ResponseDuration = duration;
+            return $"Вы установили длительность в: {configurationsModel.ResponseDuration} секунд.";
         }
     }
 }
