@@ -22,7 +22,7 @@ namespace WebApplication.Controllers
         public ContentResult Start()
         {
             HomeModel homeModel = new HomeModel();
-            var w = homeModel.StartAppWorking();
+            var w = homeModel.StartAppWorking(configurationsModel.ResponseDuration);
             return Content($"Hello {w} !!!!");
         }
     }

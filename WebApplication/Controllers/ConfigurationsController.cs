@@ -11,7 +11,6 @@ namespace WebApplication.Controllers
     {
         ConfigurationsModel configurationsModel = ConfigurationsModel.Instance;
 
-        // GET: Configurations
         [HttpGet]
         public ActionResult Index()
         {
@@ -20,10 +19,10 @@ namespace WebApplication.Controllers
         }
 
         [HttpPost]
-        public string SetDuration(int duration)
+        public void SetDuration(int duration)
         {
             configurationsModel.ResponseDuration = duration;
-            return $"Вы установили длительность в: {configurationsModel.ResponseDuration} секунд.";
+            Response.Redirect("/");
         }
     }
 }

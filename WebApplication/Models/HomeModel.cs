@@ -12,11 +12,11 @@ namespace WebApplication.Models
     {
         int e = 0;
 
-        public int StartAppWorking()
+        public int StartAppWorking(int duration)
         {
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-            while (stopWatch.Elapsed < TimeSpan.FromSeconds(5))
+            while (stopWatch.Elapsed < TimeSpan.FromSeconds(duration))
             {
                 GetHttpbin200();
                 e++;
