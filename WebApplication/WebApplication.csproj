@@ -212,10 +212,12 @@
     <Compile Include="Models\ConfigurationsModel.cs" />
     <Compile Include="Models\DBContent.cs" />
     <Compile Include="Models\DBContentContext.cs" />
+    <Compile Include="Models\Diagnostic\RequestsDiagnosticDecorator.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\HttpbinResponsesDbInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Requests\Requester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

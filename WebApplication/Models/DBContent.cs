@@ -9,8 +9,8 @@ namespace WebApplication.Models
     {
         public int Id { get; set; }
 
-        public int CommonResponseTime { get; set; }
+        public double CommonResponseTime { get; set; }
 
-        public int DelayedResponseTime { get; set; }
+        public double DelayedResponseTime { get; set; }
     }
 }

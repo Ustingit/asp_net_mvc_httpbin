@@ -10,7 +10,7 @@ namespace WebApplication.Models
     {
         protected override void Seed(DBContentContext db)
         {
-            db.DBContents.Add(new DBContent { CommonResponseTime = 1, DelayedResponseTime = 3 });
+            /*db.DBContents.Add(new DBContent { CommonResponseTime = 0, DelayedResponseTime = 0 });
             db.DBContents.Add(new DBContent { CommonResponseTime = 2, DelayedResponseTime = 3 });
             db.DBContents.Add(new DBContent { CommonResponseTime = 1, DelayedResponseTime = 3 });
             db.DBContents.Add(new DBContent { CommonResponseTime = 1, DelayedResponseTime = 3 });
@@ -26,7 +26,7 @@ namespace WebApplication.Models
             db.DBContents.Add(new DBContent { CommonResponseTime = 2, DelayedResponseTime = 3 });
             db.DBContents.Add(new DBContent { CommonResponseTime = 1, DelayedResponseTime = 3 });
             db.DBContents.Add(new DBContent { CommonResponseTime = 3, DelayedResponseTime = 5 });
-            db.DBContents.Add(new DBContent { CommonResponseTime = 1, DelayedResponseTime = 3 });
+            db.DBContents.Add(new DBContent { CommonResponseTime = 1, DelayedResponseTime = 3 });*/
 
             base.Seed(db);
         }

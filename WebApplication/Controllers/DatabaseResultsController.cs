@@ -9,7 +9,7 @@ namespace WebApplication.Controllers
 {
     public class DatabaseResultsController : Controller
     {
-        DBContentContext db = new DBContentContext();
+        DBContentContext db = DBContentContext.Instance;
 
         // GET: DatabaseResults
         public ActionResult Index()

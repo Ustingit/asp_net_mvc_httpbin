@@ -5,12 +5,26 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using WebApplication.Models.Diagnostic;
+using WebApplication.Models.Requests;
 
 namespace WebApplication.Models
 {
     public class HomeModel
     {
+        private static HomeModel _instance;
+
+        public static HomeModel Instance => _instance ?? (_instance = new HomeModel());
+
+        DBContentContext db = DBContentContext.Instance;
+        Requester requester = new Requester();
+        RequestsDiagnosticDecorator requestsDiagnosticDecorator = new RequestsDiagnosticDecorator();
         int e = 0;
+       
+        public HomeModel()
+        {
+            requestsDiagnosticDecorator.SetComponent(requester);
+        } 
 
         public int StartAppWorking(int duration)
         {
@@ -18,52 +32,12 @@ namespace WebApplication.Models
             stopWatch.Start();
             while (stopWatch.Elapsed < TimeSpan.FromSeconds(duration))
             {
-                GetHttpbin200();
-                e++;
+                requestsDiagnosticDecorator.GetHttpbin200();
+                
+                requestsDiagnosticDecorator.GetHttpbinDelay();
             }
             stopWatch.Reset();
             return e;
-        }
-
-        private void GetHttpbin200()
-        {
-            string sURL = "http://httpbin.org/status/200";
-
-            WebRequest wrGETURL;
-            wrGETURL = WebRequest.Create(sURL);
-
-            WebProxy myProxy = new WebProxy("myproxy", 80);
-            myProxy.BypassProxyOnLocal = true;
-
-            wrGETURL.Proxy = WebProxy.GetDefaultProxy();
-
-            Stream objStream;
-            objStream = wrGETURL.GetResponse().GetResponseStream();
-
-            StreamReader objReader = new StreamReader(objStream);
-
-            string sLine = "";
-            int i = 0;
-
-            while (sLine != null)
-            {
-                i++;
-                sLine = objReader.ReadLine();
-                if (sLine != null)
-                    Console.WriteLine("{0}:{1}", i, sLine);
-            }
-            Console.ReadLine();
-
-        }
-
-        private void GetHttpbinDelay()
-        {
-
-        }
-
-        private void SaveResponseTime()
-        {
-
         }
     }
 }

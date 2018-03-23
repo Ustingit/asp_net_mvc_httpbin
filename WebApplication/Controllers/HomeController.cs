@@ -18,12 +18,12 @@ namespace WebApplication.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ContentResult Start()
+        [HttpGet]
+        public void Start()
         {
-            HomeModel homeModel = new HomeModel();
+            HomeModel homeModel = HomeModel.Instance;
+            Response.Redirect("/Graphics");
             var w = homeModel.StartAppWorking(configurationsModel.ResponseDuration);
-            return Content($"Hello {w} !!!!");
         }
     }
 }
