@@ -12,21 +12,30 @@
 <body>
     <div>
         <h3>Содержимое базы данных</h3>
-        <table>
-            <tr>
-                <td><p>Ответы от status/200</p></td>
-                <td><p>Ответы от delay/x</p></td>
-                <td></td>
-            </tr>
-            @foreach (var contentItem in ViewBag.Content)
-            {
-                <tr>
-                    <td><p>@contentItem.CommonResponseTime</p></td>
-                    <td><p>@contentItem.DelayedResponseTime</p></td>
-                    <td></td>
-                </tr>
-            }
-        </table>
+    </div>
+    <div class="container" style="overflow:hidden;width:90%">
+        <div class="box" style="white-space:nowrap">
+            <div style="width:40%;display:inline-block;border:1px solid black">
+                <p>Ответы от status/200</p>
+                @foreach (var contentItem in ViewBag.Content)
+                {
+                    if (@contentItem.CommonResponseTime != 0)
+                    {
+                        <p>@contentItem.CommonResponseTime</p>
+                    }
+                }
+            </div>
+            <div style="width:40%;display:inline-block;border:1px solid black">
+                <p>Ответы от delay/x</p>
+                @foreach (var contentItem in ViewBag.Content)
+                {
+                    if (@contentItem.DelayedResponseTime != 0)
+                    {
+                        <p>@contentItem.DelayedResponseTime</p>
+                    }
+                }
+            </div>
+        </div>
     </div>
 </body>
 </html>

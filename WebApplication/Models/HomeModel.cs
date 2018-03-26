@@ -19,15 +19,17 @@ namespace WebApplication.Models
         DBContentContext db = DBContentContext.Instance;
         Requester requester = new Requester();
         RequestsDiagnosticDecorator requestsDiagnosticDecorator = new RequestsDiagnosticDecorator();
-        int e = 0;
        
         public HomeModel()
         {
             requestsDiagnosticDecorator.SetComponent(requester);
         } 
 
-        public int StartAppWorking(int duration)
+        public void StartAppWorking(int duration)
         {
+            db.DBContents.RemoveRange(db.DBContents);
+            db.SaveChanges();
+
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             while (stopWatch.Elapsed < TimeSpan.FromSeconds(duration))
@@ -37,7 +39,6 @@ namespace WebApplication.Models
                 requestsDiagnosticDecorator.GetHttpbinDelay();
             }
             stopWatch.Reset();
-            return e;
         }
     }
 }

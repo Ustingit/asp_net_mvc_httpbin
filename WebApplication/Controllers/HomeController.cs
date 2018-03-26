@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using WebApplication.Models;
 
 namespace WebApplication.Controllers
@@ -11,6 +6,7 @@ namespace WebApplication.Controllers
     public class HomeController : Controller
     {
         ConfigurationsModel configurationsModel = ConfigurationsModel.Instance;
+        DBContentContext db = DBContentContext.Instance;
 
         public ActionResult Index()
         {
@@ -23,7 +19,7 @@ namespace WebApplication.Controllers
         {
             HomeModel homeModel = HomeModel.Instance;
             Response.Redirect("/Graphics");
-            var w = homeModel.StartAppWorking(configurationsModel.ResponseDuration);
+            homeModel.StartAppWorking(configurationsModel.ResponseDuration);
         }
     }
 }
