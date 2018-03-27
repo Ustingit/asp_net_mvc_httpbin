@@ -18,7 +18,7 @@ namespace WebApplication.Controllers
         public void Start()
         {
             HomeModel homeModel = HomeModel.Instance;
-            Response.Redirect("/Graphics");
+            //Response.Redirect("/Graphics");
             homeModel.StartAppWorking(configurationsModel.ResponseDuration);
         }
     }
