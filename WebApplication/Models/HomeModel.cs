@@ -18,6 +18,7 @@ namespace WebApplication.Models
 
         DBContentContext db = DBContentContext.Instance;
         Requester requester = new Requester();
+        Stopwatch timer = new Stopwatch();
         RequestsDiagnosticDecorator requestsDiagnosticDecorator = new RequestsDiagnosticDecorator();
        
         public HomeModel()
@@ -34,9 +35,20 @@ namespace WebApplication.Models
             stopWatch.Start();
             while (stopWatch.Elapsed < TimeSpan.FromSeconds(duration))
             {
-                requestsDiagnosticDecorator.GetHttpbin200();
-                
-                requestsDiagnosticDecorator.GetHttpbinDelay();
+                timer.Reset();
+                timer.Start();
+                requester.GetHttpbin200();
+                timer.Stop();
+                var timeTaken200 = timer.Elapsed.TotalSeconds;
+
+                timer.Reset();
+                timer.Start();
+                requester.GetHttpbinDelay();
+                timer.Stop();
+                var timeTakenDelay = timer.Elapsed.TotalSeconds;
+
+                db.DBContents.Add(new DBContent { CommonResponseTime = timeTaken200, DelayedResponseTime = timeTakenDelay });
+                db.SaveChanges();
             }
             stopWatch.Reset();
         }

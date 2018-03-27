@@ -14,6 +14,6 @@ namespace WebApplication.Models
 
         public static ConfigurationsModel Instance => _instance ?? (_instance = new ConfigurationsModel());
 
-        public int ResponseDuration { get; set; } = 10;
+        public int ResponseDuration { get; set; } = 5;
     }
 }

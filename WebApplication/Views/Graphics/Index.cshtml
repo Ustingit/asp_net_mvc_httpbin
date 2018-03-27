@@ -11,9 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.min.js"></script>  
 
     <script>
-
-        var firstList = @ViewBag.ContentIds;
-        var secondList = @ViewBag.DelayedResponseTimes;
+        var firstList = @Html.Raw(Json.Encode(@ViewBag.ContentIds));
+        var secondList = @Html.Raw(Json.Encode(@ViewBag.DelayedResponseTimes));
 
         var LineChartData =
             {
@@ -26,24 +25,24 @@
                 }]
             };
 
-            window.onload = function () {
-                var ctx1 = document.getElementById("Linecanvas").getContext("2d");
-                window.myBar = new Chart(ctx1,
-                    {
-                        type: 'line',
-                        data: LineChartData,
-                        options:
+        window.onload = function () {
+            var ctx1 = document.getElementById("Linecanvas").getContext("2d");
+            window.myBar = new Chart(ctx1,
+                {
+                    type: 'line',
+                    data: LineChartData,
+                    options:
+                        {
+                            title:
                             {
-                                title:
-                                {
-                                    display: true,
-                                    text: "Response Times"
-                                },
-                                responsive: true,
-                                maintainAspectRatio: true
-                            }
-                    });
-            }
+                                display: true,
+                                text: "Response Times"
+                            },
+                            responsive: true,
+                            maintainAspectRatio: true
+                        }
+                });
+        }
     </script>  
 </head>
 <body>
