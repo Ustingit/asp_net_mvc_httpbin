@@ -9,41 +9,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>Графики</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.min.js"></script>  
-
+    <script language="javascript" type="text/javascript" src="~/Scripts/LineChartScript.js"></script>
     <script>
-        var firstList = @Html.Raw(Json.Encode(@ViewBag.ContentIds));
-        var secondList = @Html.Raw(Json.Encode(@ViewBag.DelayedResponseTimes));
-
-        var LineChartData =
-            {
-                labels: firstList,
-                datasets: [{
-                    label: 'Delayed Response Times',
-                    backgroundColor: "rgba(75,192,192,0.4)",
-                    borderWidth: 2,
-                    data: secondList
-                }]
-            };
-
-        window.onload = function () {
-            var ctx1 = document.getElementById("Linecanvas").getContext("2d");
-            window.myBar = new Chart(ctx1,
-                {
-                    type: 'line',
-                    data: LineChartData,
-                    options:
-                        {
-                            title:
-                            {
-                                display: true,
-                                text: "Delayed Response Times"
-                            },
-                            responsive: true,
-                            maintainAspectRatio: true
-                        }
-                });
-        }
-    </script>  
+        buildLineChart(@Html.Raw(Json.Encode(@ViewBag.ContentIds)), @Html.Raw(Json.Encode(@ViewBag.DelayedResponseTimes)), "Delayed Response Times", "Linecanvas");
+    </script>
 </head>
 <body>
 
