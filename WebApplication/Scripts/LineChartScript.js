@@ -1,14 +1,22 @@
-﻿function buildLineChart(firstList, secondList, label, elementId) {
+﻿function buildLineChart(firstList, secondList, x_labels, chart_label, elementId) {
     
     var LineChartData =
             {
-                labels: firstList,
-                datasets: [{
-                    label: label,
-                    backgroundColor: "rgba(75,192,192,0.4)",
-                    borderWidth: 2,
-                    data: secondList
-                }]
+                labels: x_labels,
+                datasets: [
+                    {
+                        label: "Common Responses",
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderWidth: 2,
+                        data: firstList
+                    },
+                    {
+                        label: "Delayed Responses",
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderWidth: 2,
+                        data: secondList
+                    }
+                ]
             };
 
     window.onload = function () {
@@ -22,7 +30,7 @@
                         title:
                         {
                             display: true,
-                            text: label
+                            text: chart_label
                         },
                         responsive: true,
                         maintainAspectRatio: true

@@ -11,17 +11,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.min.js"></script>  
     <script language="javascript" type="text/javascript" src="~/Scripts/LineChartScript.js"></script>
     <script>
-        buildLineChart(@Html.Raw(Json.Encode(@ViewBag.ContentIds)), @Html.Raw(Json.Encode(@ViewBag.DelayedResponseTimes)), "Delayed Response Times", "Linecanvas");
+        buildLineChart(@Html.Raw(Json.Encode(@ViewBag.CommonResponseTimes)), 
+            @Html.Raw(Json.Encode(@ViewBag.DelayedResponseTimes)), 
+            @Html.Raw(Json.Encode(@ViewBag.ContentIds)),
+            "Response Times", 
+            "Linecanvas");
     </script>
 </head>
 <body>
 
-    <div style="text-align: center">
-        <canvas id="Linecanvas"></canvas>
-    </div>
-    <div style="text-align: center">
-        Disclaimer:- AZAZA
-    </div>  
+    <div class="container" style="overflow:hidden;width:100%">
+        <div class="box" style="white-space:nowrap">
+                <div style="width:80%;display:inline-block;height:60%;">
+                    <div style="text-align: center">
+                        <canvas id="Linecanvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </body>
 </html>
