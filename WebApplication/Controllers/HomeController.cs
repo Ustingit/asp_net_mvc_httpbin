@@ -6,7 +6,7 @@ namespace WebApplication.Controllers
     public class HomeController : Controller
     {
         ConfigurationsModel configurationsModel = ConfigurationsModel.Instance;
-        DBContentContext db = DBContentContext.Instance;
+        DBContentContext db = new DBContentContext();
 
         public ActionResult Index()
         {
@@ -18,7 +18,7 @@ namespace WebApplication.Controllers
         public void Start()
         {
             HomeModel homeModel = HomeModel.Instance;
-            //Response.Redirect("/Graphics");
+            Response.Redirect("/Graphics");
             homeModel.StartAppWorking(configurationsModel.ResponseDuration);
         }
     }

@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Web;
 using WebApplication.Models.Diagnostic;
 using WebApplication.Models.Requests;
 
@@ -16,7 +11,7 @@ namespace WebApplication.Models
 
         public static HomeModel Instance => _instance ?? (_instance = new HomeModel());
 
-        DBContentContext db = DBContentContext.Instance;
+        DBContentContext db = new DBContentContext();
         Requester requester = new Requester();
         Stopwatch timer = new Stopwatch();
         RequestsDiagnosticDecorator requestsDiagnosticDecorator = new RequestsDiagnosticDecorator();

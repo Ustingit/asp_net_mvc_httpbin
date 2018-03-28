@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace WebApplication.Models
 {
@@ -10,6 +6,7 @@ namespace WebApplication.Models
     {
         protected override void Seed(DBContentContext db)
         {
+            db.DBContents.Add(new DBContent { CommonResponseTime = 0, DelayedResponseTime = 0 });
             base.Seed(db);
         }
     }

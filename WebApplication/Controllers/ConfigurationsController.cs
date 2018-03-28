@@ -23,7 +23,7 @@ namespace WebApplication.Controllers
 
         public void ClearDB()
         {
-            DBContentContext db = DBContentContext.Instance;
+            DBContentContext db = new DBContentContext();
             
             db.DBContents.RemoveRange(db.DBContents);
             db.SaveChanges();

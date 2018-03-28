@@ -7,7 +7,7 @@ namespace WebApplication.Models.Diagnostic
     public class RequestsDiagnosticDecorator : IRequestsDiagnosticDecorator
     {
         Stopwatch timer = new Stopwatch();
-        DBContentContext db = DBContentContext.Instance;
+        DBContentContext db = new DBContentContext();
 
         public override void GetHttpbin200()
         {
