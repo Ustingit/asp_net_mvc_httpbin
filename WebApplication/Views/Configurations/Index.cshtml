@@ -11,10 +11,10 @@
 </head>
 <body>
     <div id="wrapper">
-            <p class="text-centration">В данный момент длительность работы приложения составляет: @ViewBag.Duration секунд.</p>
+            <h3 class="text-centration">В данный момент длительность работы приложения составляет: @ViewBag.Duration секунд.</h3>
             <form method="post" action="/Configurations/SetDuration">
 
-                <p>Введите желаемую длительность работы приложения:</p>
+                <h3>Введите желаемую длительность работы приложения:</h3>
                 @Html.TextBox("duration")
                 <input type="submit" />
             </form>
