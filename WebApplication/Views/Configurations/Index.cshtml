@@ -10,15 +10,15 @@
     <title>Конфигурирование</title>
 </head>
 <body>
-    <div class="configuration">
-        <p>В данный момент длительность работы приложения составляет: @ViewBag.Duration секунд.</p>
-        <form method="post" action="/Configurations/SetDuration">
+    <div id="wrapper">
+            <p class="text-centration">В данный момент длительность работы приложения составляет: @ViewBag.Duration секунд.</p>
+            <form method="post" action="/Configurations/SetDuration">
 
-            <p>Введите желаемую длительность работы приложения:</p>
-            @Html.TextBox("duration")
-            <input type="submit" />
-        </form>
+                <p>Введите желаемую длительность работы приложения:</p>
+                @Html.TextBox("duration")
+                <input type="submit" />
+            </form>
 
-    </div>
+        </div>
 </body>
 </html>

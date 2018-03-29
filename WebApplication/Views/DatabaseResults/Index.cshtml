@@ -10,32 +10,35 @@
     <title>БД</title>
 </head>
 <body>
-    <div>
-        <h3>Содержимое базы данных</h3>
-    </div>
-    <div class="container" style="overflow:hidden;width:100%">
-        <div class="box" style="white-space:nowrap">
-            <div style="width:49%;display:inline-block;border:1px solid black">
-                <p style="text-align: center">Ответы от status/200</pstyle="text-align:>
-                @foreach (var contentItem in ViewBag.Content)
-                {
-                    if (@contentItem.CommonResponseTime != 0)
-                    {
-                        <p style="text-align: center">@contentItem.CommonResponseTime</p>
-                    }
-                }
-            </div>
-            <div style="width:49%;display:inline-block;border:1px solid black">
-                <p style="text-align: center">Ответы от delay/x</p>
-                @foreach (var contentItem in ViewBag.Content)
-                {
-                    if (@contentItem.DelayedResponseTime != 0)
-                    {
-                        <p style="text-align: center">@contentItem.DelayedResponseTime</p>
-                    }
-                }
+    <div id="wrapper">
+        <div>
+            <h3>Содержимое базы данных</h3>
+        </div>
+        <div class="container" style="overflow:hidden;width:100%">
+            <div class="box" style="white-space:nowrap">
+                <div style="width:49%;display:inline-block;border:1px solid black">
+                    <p style="text-align: center">
+                        Ответы от status/200</pstyle="text-align:>
+                        @foreach (var contentItem in ViewBag.Content)
+                        {
+                            if (@contentItem.CommonResponseTime != 0)
+                            {
+                            <p style="text-align: center">@contentItem.CommonResponseTime</p>
+                            }
+                        }
+                    </div>
+                    <div style="width:49%;display:inline-block;border:1px solid black">
+                        <p style="text-align: center">Ответы от delay/x</p>
+                        @foreach (var contentItem in ViewBag.Content)
+                        {
+                            if (@contentItem.DelayedResponseTime != 0)
+                            {
+                                <p style="text-align: center">@contentItem.DelayedResponseTime</p>
+                            }
+                        }
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </body>
 </html>

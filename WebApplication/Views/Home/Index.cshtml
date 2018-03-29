@@ -10,10 +10,12 @@
     <title>Главная</title>
 </head>
 <body>
-    <div class="start-button-div">
-        <p><a href="/Home/Start">Start</a></p>
+    <div id="wrapper">
+        <div class="start-button-div">
+            <p><a href="/Home/Start">Start</a></p>
+        </div>
+        <p>В данный момент длительность работы приложения составляет: @ViewBag.Duration секунд.</p>
+        <p>Если вы хотите изменить это значение, перейдите на страницу <a href="/Configurations">конфигурирования</a>.</p>
     </div>
-    <p>В данный момент длительность работы приложения составляет: @ViewBag.Duration секунд.</p>
-    <p>Если вы хотите изменить это значение, перейдите по <a href="/Configurations">ссылке</a>.</p>
 </body>
 </html>
