@@ -7,12 +7,16 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/HomePage.css")"/>
     <title>Главная</title>
+
 </head>
 <body>
     <div id="wrapper">
         <div class="start-button-div">
-            <p><a href="/Home/Start">Start</a></p>
+
+            <a href="/Home/Start" class="button">Start application! <i class="icon-chevron-right"></i></a>
+
         </div>
         <h3>В данный момент длительность работы приложения составляет: @ViewBag.Duration секунд.</h3>
         <h3>Если вы хотите изменить это значение, перейдите на страницу <a href="/Configurations">конфигурирования</a>.</h3>
