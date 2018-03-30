@@ -1,0 +1,11 @@
+﻿@model IEnumerable<WebApplication.Models.DBContent>
+
+<div id="searchresults">
+    <h3>Ответы от сервиса delayed:</h3>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.DelayedResponseTime</li>
+        }
+    </ul>
+</div>
