@@ -290,8 +290,8 @@
     <Content Include="Views\DatabaseResults\Index.cshtml" />
     <Content Include="Views\Configurations\Index.cshtml" />
     <Content Include="Views\Graphics\Index.cshtml" />
-    <Content Include="Views\DatabaseResults\AjaxDatabaseResultTable.cshtml" />
-    <Content Include="Views\DatabaseResults\AjaxDatabaseResultTableGet.cshtml" />
+    <Content Include="Views\DatabaseResults\AjaxDatabaseResultTableCommon.cshtml" />
+    <Content Include="Views\DatabaseResults\AjaxDatabaseResultTableDelayed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

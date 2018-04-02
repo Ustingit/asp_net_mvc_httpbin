@@ -46,18 +46,16 @@
         </div>
         <div class="container" style="overflow:hidden;width:100%">
             <div class="box" style="white-space:nowrap">
+                
                 <div style="width:49%;display:inline-block;border:1px solid black">
-                    <h3 style="text-align: center">
-                        Ответы от status/200
-                    </h3>
-                    <div id="DelayedResponsesList">
-                        @{Html.RenderPartial("AjaxDatabaseResultTable");}
+                    <div id="CommonResponsesList">
+                        @{Html.RenderPartial("AjaxDatabaseResultTableCommon");}
                     </div>
                 </div>
+
                 <div style="width:49%;display:inline-block;border:1px solid black">
-                    <h3 style="text-align: center">Ответы от delay/x</h3>
-                    <div id="CommonResponsesList">
-                        @{Html.RenderPartial("AjaxDatabaseResultTable");}
+                    <div id="DelayedResponsesList">
+                        @{Html.RenderPartial("AjaxDatabaseResultTableDelayed");}
                     </div>
                 </div>
 
