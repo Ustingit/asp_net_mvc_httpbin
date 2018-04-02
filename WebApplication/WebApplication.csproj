@@ -212,7 +212,6 @@
     <Compile Include="Models\ConfigurationsModel.cs" />
     <Compile Include="Models\DBContent.cs" />
     <Compile Include="Models\DBContentContext.cs" />
-    <Compile Include="Models\Diagnostic\RequestsDiagnosticDecorator.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\HttpbinResponsesDbInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />

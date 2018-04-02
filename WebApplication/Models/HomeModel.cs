@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using WebApplication.Models.Diagnostic;
 using WebApplication.Models.Requests;
 
 namespace WebApplication.Models
@@ -14,12 +13,6 @@ namespace WebApplication.Models
         DBContentContext db = new DBContentContext();
         Requester requester = new Requester();
         Stopwatch timer = new Stopwatch();
-        RequestsDiagnosticDecorator requestsDiagnosticDecorator = new RequestsDiagnosticDecorator();
-       
-        public HomeModel()
-        {
-            requestsDiagnosticDecorator.SetComponent(requester);
-        } 
 
         public void StartAppWorking(int duration)
         {
