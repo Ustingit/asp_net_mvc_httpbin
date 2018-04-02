@@ -1,0 +1,20 @@
+﻿#container {
+     overflow:hidden;
+     width:100%;
+}
+
+#box {
+    white-space:nowrap;
+}
+
+.graphcontainer {
+    width:80%;
+    display:inline-block;
+    height:60%;
+}
+
+.db-ul {
+    width:49%;
+    display:inline-block;
+    border:1px solid black;
+}
