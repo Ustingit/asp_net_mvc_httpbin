@@ -26,6 +26,18 @@ namespace WebApplication
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/newcss").Include(
+                      "~/Content/AspHeader.css",
+                      "~/Content/HomePage.css",
+                      "~/Content/Common.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/otherscripts").Include(
+                        "~/Scripts/jquery.dataTables.min.js",
+                        "~/Scripts/jquery-1.4.4.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/chartscripts").Include(
+                        "~/Scripts/LineChartScript.js"));
         }
     }
 }
