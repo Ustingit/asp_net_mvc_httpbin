@@ -13,43 +13,14 @@
     @Scripts.Render("~/scripts/jquery-1.10.2.js")
     @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.min.js"></script>
-    <script>
-    $.ajax({
-        type: "post",
-        url: "/Graphics/AjaxChart",
-        contentType: "application/json; charset=utf-8",
-        updateTargetId: "Linecanvas",
-        dataType: "json",
-        success: function(result) {
-  var ctx1 = document.getElementById("Linecanvas").getContext("2d");
-  window.myBar = new Chart(ctx1, {
-    type: 'line',
-    data: {
-      labels: result.ContentIds,
-      datasets: [{
-        label: "Common Responses",
-        backgroundColor: "rgba(75,192,192,0.4)",
-        borderWidth: 2,
-        data: result.CommonResponseTimes
-      }, {
-        label: "Delayed Responses",
-        backgroundColor: "rgba(75,192,192,0.4)",
-        borderWidth: 2,
-        data: result.DelayedResponseTimes
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: "Graphic"
-      },
-      responsive: true,
-      maintainAspectRatio: true
-    }
-  });
-},
-        error: function OnErrorCall_(repo) {alert("Woops something went wrong, pls try later !");}});
-    </script>  
+    <script type="text/javascript">
+        $(function() {
+            setInterval(function() {
+            $.get('@Url.Action("AjaxPartial")', {}, function(view) {
+                $("div#div-chart").html(view);
+                })
+            }, 1500);
+        }); </script>    
 </head>
 <body>
     <div id="wrapper">
@@ -57,7 +28,7 @@
             <div class="box">
                 <div class="graphcontainer">
                     <div id="div-chart">
-                        <canvas id="Linecanvas"></canvas>
+                        @{Html.RenderPartial("AjaxChart");}
                     </div>
                 </div>
             </div>
