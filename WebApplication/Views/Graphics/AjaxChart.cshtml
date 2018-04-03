@@ -1,0 +1,11 @@
+﻿<script>
+        buildLineChart(@Html.Raw(Json.Encode(@ViewBag.CommonResponseTimes)),
+            @Html.Raw(Json.Encode(@ViewBag.DelayedResponseTimes)),
+            @Html.Raw(Json.Encode(@ViewBag.ContentIds)),
+            "Response Times",
+            "Linecanvas");
+</script>
+
+<div style="text-align: center">
+    <canvas id="Linecanvas"></canvas>
+</div>
